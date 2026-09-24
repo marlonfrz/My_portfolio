@@ -1,0 +1,45 @@
+:root {
+  --color-background: #0d0f0f;
+  --color-background-alt: #111414;
+  --color-background-elevated: #151818;
+  --color-surface: #171a1a;
+  --color-text: #f0eee7;
+  --color-text-muted: #aaa9a3;
+  --color-text-dim: #777a76;
+  --color-text-faint: #515451;
+  --color-accent: #8cffb6;
+  --color-accent-hover: #b3ffcd;
+  --color-accent-secondary: #ff8664;
+  --color-accent-contrast: #08110c;
+  --color-success: #65e39a;
+  --color-border: #2a2e2d;
+  --color-border-strong: #464c49;
+  --color-grid: rgb(240 238 231 / 0.045);
+
+  --font-sans: "Segoe UI Variable", "Segoe UI", Inter, Arial, sans-serif;
+  --font-mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  --font-size-xs: 0.74rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: clamp(1.05rem, 1.5vw, 1.3rem);
+
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-10: 5rem;
+  --space-12: 8rem;
+
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+
+  --duration-fast: 180ms;
+  --duration-medium: 420ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --sidebar-width: 17rem;
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+}

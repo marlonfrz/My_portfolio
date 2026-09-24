@@ -13,6 +13,19 @@ Build a fast, animated portfolio that presents the developer, their experience, 
 - Preserve strong performance as the project catalogue grows.
 - Host the public experience on AWS with predictable, low operating costs.
 
+### Confirmed product decisions
+
+- Public name: Marlon Valentino Farizo Hergueta
+- Primary positioning: Software Developer
+- Supporting positioning: Full-stack development, automation, and applied AI
+- Primary language: Spanish
+- Fallback language: English for devices whose preferred language is not Spanish
+- Public profiles: GitHub and LinkedIn
+- Public contact: email
+- No generic downloadable CV; the portfolio is the primary evergreen professional profile
+- Styling uses locally scoped CSS Modules backed by centralized design tokens
+- Shared utilities, integrations, configuration, and data access remain centralized by responsibility
+
 ### Non-goals
 
 - Embedding complete applications inside the portfolio with iframes.
@@ -80,8 +93,10 @@ The visual concept is a restrained digital product lab: editorial typography, wa
 ### Portfolio application
 
 - Next.js with TypeScript
+- Spanish and English localized routes with automatic first-visit locale negotiation
 - Static-first pages and metadata
 - Motion for component, layout, and scroll animation
+- CSS Modules for component styles and centralized CSS custom properties for design tokens
 - Content stored as validated project data rather than duplicated JSX
 - Reusable primitives for sections, project cards, navigation, and case studies
 - Automated accessibility, type, lint, and build checks
@@ -91,6 +106,7 @@ Proposed source boundaries:
 ```text
 src/
   app/
+    [locale]/
   components/
     layout/
     navigation/
@@ -99,8 +115,14 @@ src/
   content/
     projects/
   lib/
+    i18n/
+    config/
+    integrations/
+    utils/
   styles/
 ```
+
+Locale negotiation should use the browser language on the first visit: Spanish preferences resolve to Spanish and every other preference resolves to English. A visible language control always allows manual selection, and that choice is persisted. Search engines and shared links use explicit locale URLs rather than depending only on redirection.
 
 ### Demo applications
 
@@ -112,6 +134,8 @@ UI -> application services -> production API provider
 ```
 
 The local demo provider supplies deterministic seed data and may persist visitor changes in IndexedDB or local storage. A visible reset action restores the original state. Network calls to production services, payment providers, email providers, and private APIs are disabled in demo builds.
+
+The preferred delivery approach is an isolated demo branch or a dedicated clone derived from each existing product. The production architecture remains recognizable, while adapters replace external effects with mock data and deterministic local behavior. The final choice is made after auditing each repository so that demo-specific conditions do not pollute production code.
 
 Every demo includes:
 
@@ -261,9 +285,6 @@ Before a public release, verify:
 ## 8. Open decisions
 
 - Public domain and subdomain names
-- Spanish-only or bilingual content
-- Professional name and primary positioning statement
 - Whether source repositories are public, private, or selectively linked
 - Existing frameworks and deployment constraints in Ticketing and CRM
 - Analytics provider, or whether launch should initially avoid analytics
-

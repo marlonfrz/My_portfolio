@@ -1,0 +1,124 @@
+.card {
+  min-height: 32rem;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-7);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(150deg, color-mix(in srgb, var(--color-surface) 96%, var(--color-accent)), var(--color-surface)),
+    var(--color-surface);
+  overflow: hidden;
+  transition:
+    border-color var(--duration-medium) var(--ease-out),
+    transform var(--duration-medium) var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-0.35rem);
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.index,
+.status,
+.category,
+.technologies,
+.demoDisabled {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+.index {
+  color: var(--color-accent);
+}
+
+.status {
+  color: var(--color-text-dim);
+}
+
+.body {
+  margin-block: auto;
+  padding-block: var(--space-10);
+}
+
+.category {
+  margin-bottom: var(--space-4);
+  color: var(--color-accent-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.body h3 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(2.25rem, 4vw, 4.5rem);
+  font-weight: 550;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.summary {
+  max-width: 33rem;
+  margin: var(--space-6) 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-7);
+  padding: 0;
+  color: var(--color-text-dim);
+  list-style: none;
+}
+
+.technologies li {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.footer {
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  color: var(--color-accent);
+}
+
+.demoDisabled {
+  color: var(--color-text-faint);
+}
+
+@media (max-width: 600px) {
+  .card {
+    min-height: 28rem;
+    padding: var(--space-5);
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

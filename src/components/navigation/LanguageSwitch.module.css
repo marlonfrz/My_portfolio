@@ -1,0 +1,23 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+.switcher button {
+  padding: 0.35rem 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.switcher button:hover,
+.switcher button:focus-visible,
+.switcher .active {
+  color: var(--color-accent);
+}
