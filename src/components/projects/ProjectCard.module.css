@@ -1,8 +1,8 @@
 .card {
-  min-height: 32rem;
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-7);
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  padding: var(--space-6);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   background:
@@ -45,8 +45,7 @@
 }
 
 .body {
-  margin-block: auto;
-  padding-block: var(--space-10);
+  padding-block: var(--space-7) var(--space-6);
 }
 
 .category {
@@ -59,7 +58,7 @@
 .body h3 {
   max-width: 11ch;
   margin: 0;
-  font-size: clamp(2.25rem, 4vw, 4.5rem);
+  font-size: clamp(2.25rem, 4vw, 4rem);
   font-weight: 550;
   letter-spacing: -0.06em;
   line-height: 0.95;
@@ -67,16 +66,17 @@
 
 .summary {
   max-width: 33rem;
-  margin: var(--space-6) 0 0;
+  margin: var(--space-5) 0 0;
   color: var(--color-text-muted);
   line-height: 1.7;
 }
 
 .technologies {
+  align-self: end;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin: 0 0 var(--space-7);
+  margin: 0 0 var(--space-6);
   padding: 0;
   color: var(--color-text-dim);
   list-style: none;
@@ -113,7 +113,6 @@
 
 @media (max-width: 600px) {
   .card {
-    min-height: 28rem;
     padding: var(--space-5);
   }
 
