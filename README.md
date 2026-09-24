@@ -62,3 +62,21 @@ npm run type-check
 npm test
 npm run build
 ```
+
+## Docker
+
+Build and run the production-like static site with Nginx:
+
+```bash
+docker compose up --build -d
+```
+
+Open `http://localhost:3000`. The root route selects Spanish or English from the saved preference and browser language.
+
+Inspect or stop the service:
+
+```bash
+docker compose ps
+docker compose logs -f portfolio
+docker compose down
+```
