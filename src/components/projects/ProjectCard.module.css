@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   height: 100%;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
@@ -12,11 +13,6 @@
   transition:
     border-color var(--duration-medium) var(--ease-out),
     transform var(--duration-medium) var(--ease-out);
-}
-
-.card:hover {
-  border-color: var(--color-border-strong);
-  transform: translateY(-0.35rem);
 }
 
 .header,
@@ -109,6 +105,29 @@
 
 .demoDisabled {
   color: var(--color-text-faint);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card {
+    cursor: pointer;
+  }
+
+  .card:hover,
+  .card:has(.footer a:focus-visible) {
+    border-color: var(--color-border-strong);
+    transform: translateY(-0.35rem);
+  }
+
+  .card:has(.footer a:focus-visible) {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 0.25rem;
+  }
+
+  .footer a::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+  }
 }
 
 @media (max-width: 600px) {

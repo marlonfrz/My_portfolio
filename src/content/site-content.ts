@@ -146,7 +146,7 @@ const content: Record<Locale, SiteContent> = {
       title: "Un perfil transversal, con el producto como punto de encuentro.",
       paragraphs: [
         "Trabajo entre frontend, backend y automatización para convertir necesidades reales en herramientas completas. Mi stack principal combina Python y FastAPI con React, Next.js y TypeScript.",
-        "Integro modelos de IA cuando aportan valor concreto, manteniendo permisos, validación y reglas de negocio fuera del modelo. También trabajo con testing, scraping, servidores y despliegues.",
+        "Integro modelos de IA cuando aportan valor concreto, manteniendo permisos, validación y reglas de negocio fuera del modelo. También trabajo con testing, scraping, Docker, servidores y procesos de despliegue.",
       ],
       principles: [
         { label: "Enfoque", value: "Producto end-to-end" },
@@ -174,12 +174,12 @@ const content: Record<Locale, SiteContent> = {
     },
     experience: {
       eyebrow: "03 · Experiencia y datos",
-      title: "Más allá de una lista de tecnologías.",
+      title: "Del producto al despliegue, más allá del stack.",
       description:
-        "Desarrollo aplicaciones web, APIs, automatizaciones y herramientas internas. He trabajado con integraciones de IA, bases de datos, testing de navegador, contenedores y despliegues en servidores.",
+        "Desarrollo aplicaciones web, APIs, automatizaciones y herramientas internas, y preparo cómo llegan a producción: testing de navegador, contenedores, flujos CI/CD y despliegues en servidores.",
       metrics: [
         { value: "2", label: "CFGS: DAW + ASIR" },
-        { value: "3", label: "Áreas: producto, automatización e IA" },
+        { value: "E2E", label: "Producto, automatización y despliegue" },
         { value: "ES / EN", label: "Trabajo bilingüe" },
       ],
       stackTitle: "Stack principal",
@@ -277,7 +277,7 @@ const content: Record<Locale, SiteContent> = {
       title: "A cross-functional profile, with product at the center.",
       paragraphs: [
         "I work across frontend, backend, and automation to turn real needs into complete tools. My primary stack combines Python and FastAPI with React, Next.js, and TypeScript.",
-        "I integrate AI models where they create concrete value, keeping permissions, validation, and business rules outside the model. I also work with testing, scraping, servers, and deployments.",
+        "I integrate AI models where they create concrete value, keeping permissions, validation, and business rules outside the model. I also work with testing, scraping, Docker, servers, and deployment workflows.",
       ],
       principles: [
         { label: "Approach", value: "End-to-end product" },
@@ -305,12 +305,12 @@ const content: Record<Locale, SiteContent> = {
     },
     experience: {
       eyebrow: "03 · Experience and data",
-      title: "More than a list of technologies.",
+      title: "From product to deployment, beyond the stack.",
       description:
-        "I develop web applications, APIs, automations, and internal tools. My work spans AI integrations, databases, browser testing, containers, and server deployments.",
+        "I develop web applications, APIs, automations, and internal tools, and prepare how they reach production through browser testing, containers, CI/CD pipelines, and server deployments.",
       metrics: [
         { value: "2", label: "Higher VET degrees: DAW + ASIR" },
-        { value: "3", label: "Areas: product, automation, and AI" },
+        { value: "E2E", label: "Product, automation, and deployment" },
         { value: "ES / EN", label: "Bilingual work" },
       ],
       stackTitle: "Primary stack",

@@ -18,6 +18,8 @@ export function ProjectCard({
   viewProjectLabel,
   demoSoonLabel,
 }: ProjectCardProps) {
+  const projectHref = `/${locale}/projects/${project.slug}/`;
+
   return (
     <article className={styles.card} id={project.slug}>
       <header className={styles.header}>
@@ -38,7 +40,7 @@ export function ProjectCard({
       </ul>
 
       <footer className={styles.footer}>
-        <Link href={`/${locale}/projects/${project.slug}/`}>
+        <Link href={projectHref}>
           {viewProjectLabel}
           <span aria-hidden="true">↗</span>
         </Link>

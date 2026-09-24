@@ -20,6 +20,8 @@ const primaryStack = [
   "Next.js",
   "TypeScript",
   "Applied AI",
+  "Docker",
+  "CI/CD",
 ];
 
 export function HomePage({ content, locale }: HomePageProps) {
@@ -51,9 +53,12 @@ export function HomePage({ content, locale }: HomePageProps) {
         </Reveal>
 
         <div className={styles.stackRail} aria-label="Primary technologies">
-          {primaryStack.map((technology) => (
-            <span key={technology}>{technology}</span>
-          ))}
+          <span className={styles.stackRailLabel}>{content.experience.stackTitle}</span>
+          <div className={styles.stackRailTechnologies}>
+            {primaryStack.map((technology) => (
+              <span key={technology}>{technology}</span>
+            ))}
+          </div>
         </div>
       </section>
 
