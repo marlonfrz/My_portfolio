@@ -114,13 +114,13 @@ const content: Record<Locale, SiteContent> = {
     metadata: {
       title: "Marlon Farizo — Desarrollador de Software",
       description:
-        "Portfolio de Marlon Farizo: desarrollo full-stack, automatización e inteligencia artificial aplicada.",
+        "Portfolio de Marlon Farizo, desarrollador de software especializado en productos full-stack, automatización, IA aplicada y despliegue.",
     },
     navigation: {
       menu: "Navegación",
       sections: [
         { id: "introduction", label: "Introducción" },
-        { id: "about", label: "Descripción" },
+        { id: "about", label: "Perfil" },
         { id: "projects", label: "Proyectos" },
         { id: "experience", label: "Experiencia" },
         { id: "contact", label: "Contacto" },
@@ -132,24 +132,24 @@ const content: Record<Locale, SiteContent> = {
       english: "EN",
     },
     hero: {
-      eyebrow: "Desarrollo de producto · Tenerife, España",
+      eyebrow: "Software · Automatización · IA aplicada · Tenerife",
       title: "Software que conecta ideas, procesos y personas.",
       subtitle: "Desarrollador de Software",
       description:
-        "Construyo productos full-stack, automatizaciones y herramientas con IA aplicada. Desde la lógica de negocio hasta una experiencia que se pueda usar, medir y mantener.",
+        "Desarrollo de productos digitales, automatizaciones y soluciones con IA aplicada, cubriendo lógica de negocio, experiencia de usuario, testing y despliegue.",
       projectsCta: "Explorar proyectos",
-      contactCta: "Hablemos",
-      availability: "Disponible para nuevos retos",
+      contactCta: "Contactar",
+      availability: "Disponible para nuevas oportunidades",
     },
     about: {
-      eyebrow: "01 · Descripción",
-      title: "Un perfil transversal, con el producto como punto de encuentro.",
+      eyebrow: "01 · Perfil",
+      title: "Crear, automatizar y poner en marcha soluciones digitales.",
       paragraphs: [
-        "Trabajo entre frontend, backend y automatización para convertir necesidades reales en herramientas completas. Mi stack principal combina Python y FastAPI con React, Next.js y TypeScript.",
-        "Integro modelos de IA cuando aportan valor concreto, manteniendo permisos, validación y reglas de negocio fuera del modelo. También trabajo con testing, scraping, Docker, servidores y procesos de despliegue.",
+        "Frontend, backend y automatización se combinan para convertir necesidades reales en herramientas completas. El stack principal reúne Python y FastAPI con React, Next.js y TypeScript.",
+        "La integración de modelos de IA amplía las capacidades de los productos, optimiza procesos y permite crear automatizaciones más potentes. Testing, scraping, Docker, servidores y despliegue completan el alcance técnico.",
       ],
       principles: [
-        { label: "Enfoque", value: "Producto end-to-end" },
+        { label: "Enfoque", value: "Soluciones listas para funcionar" },
         { label: "Backend", value: "Python · FastAPI" },
         { label: "Frontend", value: "React · Next.js" },
         { label: "Especialidad", value: "Automatización · IA aplicada" },
@@ -157,39 +157,39 @@ const content: Record<Locale, SiteContent> = {
     },
     projects: {
       eyebrow: "02 · Proyectos",
-      title: "Productos reales, explicados sin ruido.",
+      title: "Mis productos destacados.",
       description:
-        "Una selección de aplicaciones completas. Puedes revisar sus decisiones técnicas o entrar directamente en una demo aislada.",
+        "Una selección de aplicaciones propias en las que se puede conocer el problema resuelto, sus capacidades y las decisiones técnicas que hay detrás.",
       viewProject: "Ver proyecto",
       openDemo: "Abrir demo",
       demoSoon: "Demo próximamente",
       viewAll: "Ver todos los proyectos",
-      catalogueTitle: "Archivo de proyectos",
+      catalogueTitle: "Mis proyectos",
       catalogueDescription:
-        "Productos, herramientas y experimentos construidos para resolver problemas concretos.",
+        "Aplicaciones y herramientas propias, creadas para resolver necesidades operativas concretas.",
       backHome: "Volver al portfolio",
       overview: "Visión general",
       capabilities: "Capacidades principales",
       architecture: "Arquitectura y decisiones",
     },
     experience: {
-      eyebrow: "03 · Experiencia y datos",
+      eyebrow: "03 · Experiencia técnica",
       title: "Del producto al despliegue, más allá del stack.",
       description:
-        "Desarrollo aplicaciones web, APIs, automatizaciones y herramientas internas, y preparo cómo llegan a producción: testing de navegador, contenedores, flujos CI/CD y despliegues en servidores.",
+        "Experiencia en aplicaciones web, APIs, automatizaciones y herramientas internas, incluyendo integración de modelos de IA, testing de navegador, contenedores, CI/CD y despliegues en servidores.",
       metrics: [
-        { value: "2", label: "CFGS: DAW + ASIR" },
-        { value: "E2E", label: "Producto, automatización y despliegue" },
+        { value: "2", label: "Titulaciones técnicas: DAW + ASIR" },
+        { value: "E2E", label: "Producto, desarrollo y despliegue" },
         { value: "ES / EN", label: "Trabajo bilingüe" },
       ],
       stackTitle: "Stack principal",
     },
     contact: {
       eyebrow: "04 · Contacto",
-      title: "¿Construimos algo que merezca existir?",
+      title: "El siguiente paso puede empezar con una conversación.",
       description:
-        "Estoy abierto a conversar sobre producto, desarrollo full-stack, automatización e integraciones de IA.",
-      email: "Escribir un email",
+        "Disponible para colaborar con equipos y empresas que busquen desarrollo de software, automatización e integración de IA con un enfoque práctico y orientado a resultados.",
+      email: "Contactar por email",
       github: "GitHub",
       linkedin: "LinkedIn",
     },
@@ -198,17 +198,17 @@ const content: Record<Locale, SiteContent> = {
       {
         ...sharedProjects.ticketing,
         name: "Ticketing Platform",
-        category: "Producto full-stack",
+        category: "Gestión de eventos y ticketing",
         status: "Demo en preparación",
         summary:
-          "Plataforma integral para eventos, pedidos, pagos, entradas y validación con distintos roles operativos.",
+          "Plataforma integral para gestionar eventos, ventas, pagos, emisión y validación de entradas, coordinando en un mismo entorno a los distintos perfiles operativos.",
         description:
-          "Una plataforma de ticketing construida de extremo a extremo, con reglas de dominio para administrar eventos, controlar stock, procesar pedidos y validar entradas.",
+          "Sistema transaccional con reglas de dominio para administrar eventos, controlar disponibilidad, procesar pedidos y validar entradas.",
         capabilities: [
           "Autenticación JWT y permisos para administración, promotores y validadores.",
           "Gestión de eventos, tipos de entrada, disponibilidad, pedidos y tickets.",
           "Flujos de Stripe Checkout y estados consistentes de pago y pedido.",
-          "Validación operativa de entradas y control de casos límite.",
+          "Validación de accesos y gestión de duplicados, estados inconsistentes y otras incidencias operativas.",
         ],
         architecture: [
           "Next.js y TypeScript para la experiencia de usuario.",
@@ -245,13 +245,13 @@ const content: Record<Locale, SiteContent> = {
     metadata: {
       title: "Marlon Farizo — Software Developer",
       description:
-        "Marlon Farizo's portfolio: full-stack development, automation, and applied artificial intelligence.",
+        "Marlon Farizo's portfolio: software development, full-stack applications, automation, applied AI, and deployment.",
     },
     navigation: {
       menu: "Navigation",
       sections: [
         { id: "introduction", label: "Introduction" },
-        { id: "about", label: "About" },
+        { id: "about", label: "Profile" },
         { id: "projects", label: "Projects" },
         { id: "experience", label: "Experience" },
         { id: "contact", label: "Contact" },
@@ -263,24 +263,24 @@ const content: Record<Locale, SiteContent> = {
       english: "EN",
     },
     hero: {
-      eyebrow: "Product development · Tenerife, Spain",
+      eyebrow: "Software · Automation · Applied AI · Tenerife",
       title: "Software that connects ideas, processes, and people.",
       subtitle: "Software Developer",
       description:
-        "I build full-stack products, automations, and applied AI tools—from business logic to an experience people can use, measure, and maintain.",
+        "Digital products, automations, and applied AI solutions covering business logic, user experience, testing, and deployment.",
       projectsCta: "Explore projects",
-      contactCta: "Let's talk",
+      contactCta: "Contact",
       availability: "Open to new opportunities",
     },
     about: {
-      eyebrow: "01 · About",
-      title: "A cross-functional profile, with product at the center.",
+      eyebrow: "01 · Profile",
+      title: "Build, automate, and launch digital solutions.",
       paragraphs: [
-        "I work across frontend, backend, and automation to turn real needs into complete tools. My primary stack combines Python and FastAPI with React, Next.js, and TypeScript.",
-        "I integrate AI models where they create concrete value, keeping permissions, validation, and business rules outside the model. I also work with testing, scraping, Docker, servers, and deployment workflows.",
+        "Frontend, backend, and automation come together to turn real needs into complete tools. The core stack combines Python and FastAPI with React, Next.js, and TypeScript.",
+        "AI model integration expands product capabilities, streamlines processes, and enables more powerful automations. Testing, scraping, Docker, servers, and deployment complete the technical scope.",
       ],
       principles: [
-        { label: "Approach", value: "End-to-end product" },
+        { label: "Approach", value: "Solutions ready to launch" },
         { label: "Backend", value: "Python · FastAPI" },
         { label: "Frontend", value: "React · Next.js" },
         { label: "Focus", value: "Automation · Applied AI" },
@@ -288,39 +288,39 @@ const content: Record<Locale, SiteContent> = {
     },
     projects: {
       eyebrow: "02 · Projects",
-      title: "Real products, explained without noise.",
+      title: "My featured products.",
       description:
-        "A selection of complete applications. Review their technical decisions or open an isolated interactive demo.",
+        "A selection of my applications, covering the problems they solve, their capabilities, and the technical decisions behind them.",
       viewProject: "View project",
       openDemo: "Open demo",
       demoSoon: "Demo coming soon",
       viewAll: "View all projects",
-      catalogueTitle: "Project archive",
+      catalogueTitle: "My projects",
       catalogueDescription:
-        "Products, tools, and experiments built to solve concrete problems.",
+        "Applications and tools created to solve concrete operational needs.",
       backHome: "Back to portfolio",
       overview: "Overview",
       capabilities: "Core capabilities",
       architecture: "Architecture and decisions",
     },
     experience: {
-      eyebrow: "03 · Experience and data",
+      eyebrow: "03 · Technical experience",
       title: "From product to deployment, beyond the stack.",
       description:
-        "I develop web applications, APIs, automations, and internal tools, and prepare how they reach production through browser testing, containers, CI/CD pipelines, and server deployments.",
+        "Experience in web applications, APIs, automations, and internal tools, including AI model integration, browser testing, containers, CI/CD, and server deployments.",
       metrics: [
-        { value: "2", label: "Higher VET degrees: DAW + ASIR" },
-        { value: "E2E", label: "Product, automation, and deployment" },
+        { value: "2", label: "Technical qualifications: DAW + ASIR" },
+        { value: "E2E", label: "Product, development, and deployment" },
         { value: "ES / EN", label: "Bilingual work" },
       ],
       stackTitle: "Primary stack",
     },
     contact: {
       eyebrow: "04 · Contact",
-      title: "Shall we build something worth using?",
+      title: "The next step can start with a conversation.",
       description:
-        "I am open to conversations about product, full-stack development, automation, and AI integrations.",
-      email: "Send an email",
+        "Available to collaborate with teams and companies looking for software development, automation, and AI integration with a practical, results-driven approach.",
+      email: "Contact by email",
       github: "GitHub",
       linkedin: "LinkedIn",
     },
@@ -329,17 +329,17 @@ const content: Record<Locale, SiteContent> = {
       {
         ...sharedProjects.ticketing,
         name: "Ticketing Platform",
-        category: "Full-stack product",
+        category: "Event management and ticketing",
         status: "Demo in progress",
         summary:
-          "An end-to-end platform for events, orders, payments, tickets, and validation across operational roles.",
+          "A comprehensive platform for managing events, sales, payments, ticket issuance, and validation, bringing different operational roles together in one environment.",
         description:
-          "A ticketing platform built end to end, with domain rules for event management, stock control, order processing, and ticket validation.",
+          "A transactional system with domain rules for managing events, controlling availability, processing orders, and validating tickets.",
         capabilities: [
           "JWT authentication and permissions for administrators, promoters, and validators.",
           "Events, ticket types, availability, orders, and issued tickets.",
           "Stripe Checkout flows with consistent payment and order states.",
-          "Operational ticket validation and edge-case handling.",
+          "Access validation and handling of duplicates, inconsistent states, and other operational incidents.",
         ],
         architecture: [
           "Next.js and TypeScript for the user experience.",

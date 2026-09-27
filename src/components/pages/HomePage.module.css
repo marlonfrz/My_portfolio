@@ -377,6 +377,10 @@
 }
 
 @media (max-width: 1050px) {
+  .splitHeading {
+    grid-template-columns: 1fr;
+  }
+
   .principles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -412,7 +416,6 @@
     font-size: clamp(3.25rem, 14vw, 6.5rem);
   }
 
-  .splitHeading,
   .stackBlock,
   .stackRail {
     grid-template-columns: 1fr;
