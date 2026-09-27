@@ -62,7 +62,7 @@ export function HomePage({ content, locale }: HomePageProps) {
         </div>
       </section>
 
-      <section className={styles.section} id="about">
+      <section className={`${styles.section} ${styles.aboutSection}`} id="about">
         <Reveal>
           <p className={styles.eyebrow}>{content.about.eyebrow}</p>
           <div className={styles.splitHeading}>
