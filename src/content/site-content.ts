@@ -4,6 +4,9 @@ export type ProjectSlug = "ticketing" | "crm";
 
 export type Project = {
   slug: ProjectSlug;
+  video?: string;
+  poster?: string;
+  videoDescription?: string;
   index: string;
   name: string;
   category: string;
@@ -51,6 +54,9 @@ export type SiteContent = {
     viewProject: string;
     openDemo: string;
     demoSoon: string;
+    watchVideo: string;
+    videoTour: string;
+    videoDescription: string;
     viewAll: string;
     catalogueTitle: string;
     catalogueDescription: string;
@@ -65,6 +71,14 @@ export type SiteContent = {
     description: string;
     metrics: Array<{ value: string; label: string }>;
     stackTitle: string;
+    aiTitle: string;
+    aiDescription: string;
+    aiAreas: Array<{ title: string; description: string; tools: string[] }>;
+    cloud: {
+      title: string;
+      description: string;
+      areas: Array<{ title: string; tools: string[] }>;
+    };
   };
   contact: {
     eyebrow: string;
@@ -81,6 +95,8 @@ export type SiteContent = {
 const sharedProjects = {
   ticketing: {
     slug: "ticketing" as const,
+    video: "/videos/ticketing-walkthrough.mp4",
+    poster: "/videos/ticketing-poster.jpg",
     index: "01",
     technologies: [
       "Next.js",
@@ -88,13 +104,16 @@ const sharedProjects = {
       "FastAPI",
       "PostgreSQL",
       "Redis",
-      "RabbitMQ",
+      "Amazon SQS",
+      "AWS",
       "Stripe",
       "Docker",
     ],
   },
   crm: {
     slug: "crm" as const,
+    video: "/videos/crm-walkthrough.mp4",
+    poster: "/videos/crm-poster.jpg",
     index: "02",
     technologies: [
       "Next.js",
@@ -157,12 +176,15 @@ const content: Record<Locale, SiteContent> = {
     },
     projects: {
       eyebrow: "02 · Proyectos",
-      title: "Mis productos destacados.",
+      title: "Mis proyectos destacados.",
       description:
         "Una selección de aplicaciones propias en las que se puede conocer el problema resuelto, sus capacidades y las decisiones técnicas que hay detrás.",
       viewProject: "Ver proyecto",
       openDemo: "Abrir demo",
       demoSoon: "Demo próximamente",
+      watchVideo: "Ver recorrido",
+      videoTour: "Recorrido de la plataforma",
+      videoDescription: "Del alta de un evento a la compra y validación de entradas, con datos de prueba.",
       viewAll: "Ver todos los proyectos",
       catalogueTitle: "Mis proyectos",
       catalogueDescription:
@@ -183,6 +205,24 @@ const content: Record<Locale, SiteContent> = {
         { value: "ES / EN", label: "Trabajo bilingüe" },
       ],
       stackTitle: "Stack principal",
+      aiTitle: "IA y datos: del contexto a la respuesta.",
+      aiDescription:
+        "Conozco los fundamentos de RAG y cómo combinar búsqueda, orquestación y procesamiento de datos para dar contexto útil a un modelo. Es un área que sigo explorando y que quiero aplicar en un entorno real.",
+      aiAreas: [
+        { title: "Recuperación", description: "Encontrar información relevante para cada consulta.", tools: ["RAG", "Elasticsearch"] },
+        { title: "Orquestación", description: "Conectar modelos, herramientas y flujos de trabajo.", tools: ["LangChain", "LangGraph"] },
+        { title: "Datos y observabilidad", description: "Preparar datos y entender el comportamiento del sistema.", tools: ["PySpark", "Logstash", "Kibana"] },
+      ],
+      cloud: {
+        title: "AWS y despliegue de aplicaciones.",
+        description:
+          "Experiencia práctica con servicios de AWS para publicar aplicaciones web, gestionar datos y procesos asíncronos, y automatizar despliegues. Me interesa que cada entorno sea reproducible, observable y fácil de mantener.",
+        areas: [
+          { title: "Publicación web", tools: ["EC2", "CloudFront", "Route 53"] },
+          { title: "Datos y colas", tools: ["Aurora PostgreSQL", "S3", "Amazon SQS"] },
+          { title: "Entrega y operación", tools: ["CloudWatch", "Amazon SNS", "OpenID Connect (OIDC)", "AWS Systems Manager (SSM)"] },
+        ],
+      },
     },
     contact: {
       eyebrow: "04 · Contacto",
@@ -199,7 +239,7 @@ const content: Record<Locale, SiteContent> = {
         ...sharedProjects.ticketing,
         name: "Ticketing Platform",
         category: "Gestión de eventos y ticketing",
-        status: "Demo en preparación",
+        status: "Recorrido disponible",
         summary:
           "Plataforma integral para gestionar eventos, ventas, pagos, emisión y validación de entradas, coordinando en un mismo entorno a los distintos perfiles operativos.",
         description:
@@ -213,15 +253,17 @@ const content: Record<Locale, SiteContent> = {
         architecture: [
           "Next.js y TypeScript para la experiencia de usuario.",
           "FastAPI, SQLAlchemy y PostgreSQL para dominio y persistencia.",
-          "Redis y RabbitMQ como servicios de apoyo.",
+          "Redis para estado compartido y Amazon SQS para los correos de preventa.",
           "Entorno reproducible mediante Docker Compose.",
+          "Infraestructura AWS con EC2, CloudFront, Route 53, S3 y Aurora; despliegue con GitHub Actions, OIDC y Systems Manager.",
         ],
       },
       {
         ...sharedProjects.crm,
         name: "CRM Platform",
         category: "Producto con IA aplicada",
-        status: "Demo en preparación",
+        status: "Recorrido disponible",
+        videoDescription: "Clientes, contactos, actividades, tareas, administración, auditoría y resúmenes IA, con datos ficticios.",
         summary:
           "CRM modular con aislamiento por organización, permisos por departamento, auditoría e IA opcional.",
         description:
@@ -294,6 +336,9 @@ const content: Record<Locale, SiteContent> = {
       viewProject: "View project",
       openDemo: "Open demo",
       demoSoon: "Demo coming soon",
+      watchVideo: "Watch walkthrough",
+      videoTour: "Platform walkthrough",
+      videoDescription: "From creating an event to buying and validating tickets, using sample data.",
       viewAll: "View all projects",
       catalogueTitle: "My projects",
       catalogueDescription:
@@ -314,6 +359,24 @@ const content: Record<Locale, SiteContent> = {
         { value: "ES / EN", label: "Bilingual work" },
       ],
       stackTitle: "Primary stack",
+      aiTitle: "AI and data: from context to answer.",
+      aiDescription:
+        "I understand the fundamentals of RAG and how search, orchestration, and data processing can give a model useful context. This is an area I continue to explore and want to apply in a real-world environment.",
+      aiAreas: [
+        { title: "Retrieval", description: "Find relevant information for each query.", tools: ["RAG", "Elasticsearch"] },
+        { title: "Orchestration", description: "Connect models, tools, and workflows.", tools: ["LangChain", "LangGraph"] },
+        { title: "Data and observability", description: "Prepare data and understand system behavior.", tools: ["PySpark", "Logstash", "Kibana"] },
+      ],
+      cloud: {
+        title: "AWS and application deployment.",
+        description:
+          "Practical experience with AWS services to publish web applications, manage data and asynchronous processes, and automate deployments. I focus on making environments reproducible, observable, and maintainable.",
+        areas: [
+          { title: "Web delivery", tools: ["EC2", "CloudFront", "Route 53"] },
+          { title: "Data and queues", tools: ["Aurora PostgreSQL", "S3", "Amazon SQS"] },
+          { title: "Delivery and operations", tools: ["CloudWatch", "Amazon SNS", "OpenID Connect (OIDC)", "AWS Systems Manager (SSM)"] },
+        ],
+      },
     },
     contact: {
       eyebrow: "04 · Contact",
@@ -330,7 +393,7 @@ const content: Record<Locale, SiteContent> = {
         ...sharedProjects.ticketing,
         name: "Ticketing Platform",
         category: "Event management and ticketing",
-        status: "Demo in progress",
+        status: "Walkthrough available",
         summary:
           "A comprehensive platform for managing events, sales, payments, ticket issuance, and validation, bringing different operational roles together in one environment.",
         description:
@@ -344,15 +407,17 @@ const content: Record<Locale, SiteContent> = {
         architecture: [
           "Next.js and TypeScript for the user experience.",
           "FastAPI, SQLAlchemy, and PostgreSQL for domain and persistence.",
-          "Redis and RabbitMQ as supporting services.",
+          "Redis for shared state and Amazon SQS for presale emails.",
           "A reproducible environment with Docker Compose.",
+          "AWS infrastructure with EC2, CloudFront, Route 53, S3, and Aurora; deployment via GitHub Actions, OIDC, and Systems Manager.",
         ],
       },
       {
         ...sharedProjects.crm,
         name: "CRM Platform",
         category: "Applied AI product",
-        status: "Demo in progress",
+        status: "Walkthrough available",
+        videoDescription: "Clients, contacts, activities, tasks, administration, audit logs, and AI summaries, using sample data.",
         summary:
           "A modular CRM with organization isolation, department permissions, auditability, and optional AI.",
         description:

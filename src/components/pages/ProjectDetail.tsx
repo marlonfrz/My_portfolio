@@ -17,6 +17,8 @@ export function ProjectDetail({
   locale,
   project,
 }: ProjectDetailProps) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
   return (
     <main className={styles.page}>
       <header className={styles.topbar}>
@@ -45,6 +47,28 @@ export function ProjectDetail({
           </ul>
         </header>
 
+        {project.video && (
+          <section className={styles.videoSection} id="walkthrough">
+            <div className={styles.videoIntro}>
+              <h2>{content.projects.videoTour}</h2>
+              <p>{project.videoDescription ?? content.projects.videoDescription}</p>
+            </div>
+            <video
+              className={styles.videoPlayer}
+              controls
+              preload="none"
+              playsInline
+              poster={project.poster ? `${basePath}${project.poster}` : undefined}
+              width={1280}
+              height={848}
+              aria-label={content.projects.videoTour}
+            >
+              <source src={`${basePath}${project.video}`} type="video/mp4" />
+              <a href={`${basePath}${project.video}`}>{content.projects.watchVideo}</a>
+            </video>
+          </section>
+        )}
+
         <section className={styles.caseSection}>
           <h2>{content.projects.overview}</h2>
           <p>{project.description}</p>
@@ -69,10 +93,12 @@ export function ProjectDetail({
           </div>
         </section>
 
-        <div className={styles.demoBanner}>
-          <span>{content.projects.demoSoon}</span>
-          <span aria-hidden="true">↗</span>
-        </div>
+        {!project.video && (
+          <div className={styles.demoBanner}>
+            <span>{content.projects.demoSoon}</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+        )}
       </article>
 
       <Link className={styles.backLink} href={`/${locale}/#projects`}>

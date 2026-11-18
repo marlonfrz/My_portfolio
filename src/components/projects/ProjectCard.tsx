@@ -10,6 +10,7 @@ type ProjectCardProps = {
   locale: Locale;
   viewProjectLabel: string;
   demoSoonLabel: string;
+  watchVideoLabel: string;
 };
 
 export function ProjectCard({
@@ -17,6 +18,7 @@ export function ProjectCard({
   locale,
   viewProjectLabel,
   demoSoonLabel,
+  watchVideoLabel,
 }: ProjectCardProps) {
   const projectHref = `/${locale}/projects/${project.slug}/`;
 
@@ -44,7 +46,13 @@ export function ProjectCard({
           {viewProjectLabel}
           <span aria-hidden="true">↗</span>
         </Link>
-        <span className={styles.demoDisabled}>{demoSoonLabel}</span>
+        {project.video ? (
+          <Link className={styles.videoLink} href={`${projectHref}#walkthrough`}>
+            {watchVideoLabel}
+          </Link>
+        ) : (
+          <span className={styles.demoDisabled}>{demoSoonLabel}</span>
+        )}
       </footer>
     </article>
   );

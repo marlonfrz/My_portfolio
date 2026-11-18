@@ -107,6 +107,14 @@
   color: var(--color-text-faint);
 }
 
+.footer .videoLink {
+  position: relative;
+  z-index: 1;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .card {
     cursor: pointer;
@@ -123,7 +131,7 @@
     outline-offset: 0.25rem;
   }
 
-  .footer a::before {
+  .footer a:first-child::before {
     position: absolute;
     inset: 0;
     content: "";

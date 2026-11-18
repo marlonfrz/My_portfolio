@@ -16,7 +16,7 @@ export function LocaleRedirect() {
         ? savedLocale
         : resolveDeviceLocale(window.navigator.language);
 
-    window.location.replace(`/${locale}/`);
+    window.location.replace(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/${locale}/`);
   }, []);
 
   return (

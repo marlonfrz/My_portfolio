@@ -19,6 +19,7 @@ const primaryStack = [
   "React",
   "Next.js",
   "TypeScript",
+  "AWS",
   "Applied AI",
   "Docker",
   "CI/CD",
@@ -100,6 +101,7 @@ export function HomePage({ content, locale }: HomePageProps) {
                 locale={locale}
                 viewProjectLabel={content.projects.viewProject}
                 demoSoonLabel={content.projects.demoSoon}
+                watchVideoLabel={content.projects.watchVideo}
               />
             </Reveal>
           ))}
@@ -132,6 +134,46 @@ export function HomePage({ content, locale }: HomePageProps) {
           <div>
             {primaryStack.map((technology) => (
               <strong key={technology}>{technology}</strong>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal className={styles.aiPanel} delay={0.16}>
+          <div className={styles.aiPanelIntro}>
+            <span className={styles.aiPanelLabel}>AI / DATA</span>
+            <div>
+              <h3>{content.experience.aiTitle}</h3>
+              <p>{content.experience.aiDescription}</p>
+            </div>
+          </div>
+          <div className={styles.aiAreas}>
+            {content.experience.aiAreas.map((area, index) => (
+              <div className={styles.aiArea} key={area.title}>
+                <span className={styles.aiAreaNumber}>0{index + 1}</span>
+                <h4>{area.title}</h4>
+                <p>{area.description}</p>
+                <div className={styles.aiTools}>
+                  {area.tools.map((tool) => <span key={tool}>{tool}</span>)}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal className={styles.cloudPanel} delay={0.2}>
+          <div className={styles.cloudPanelIntro}>
+            <span className={styles.cloudPanelLabel}>CLOUD / AWS</span>
+            <div>
+              <h3>{content.experience.cloud.title}</h3>
+              <p>{content.experience.cloud.description}</p>
+            </div>
+          </div>
+          <div className={styles.cloudAreas}>
+            {content.experience.cloud.areas.map((area) => (
+              <div key={area.title}>
+                <h4>{area.title}</h4>
+                <p>{area.tools.join(" · ")}</p>
+              </div>
             ))}
           </div>
         </Reveal>

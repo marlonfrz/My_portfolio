@@ -39,6 +39,7 @@ export function ProjectCatalogue({ content, locale }: ProjectCatalogueProps) {
             locale={locale}
             viewProjectLabel={content.projects.viewProject}
             demoSoonLabel={content.projects.demoSoon}
+            watchVideoLabel={content.projects.watchVideo}
           />
         ))}
       </div>
